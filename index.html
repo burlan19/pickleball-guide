@@ -1,0 +1,780 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>匹克球自創攻略</title>
+<meta name="description" content="從規則、發球順序、丁克、第三拍、走位補位到高手戰術，含 3D 戰術實驗室與 2.5D 圖解的匹克球完整攻略。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Noto+Sans+TC:wght@400;700;900&display=swap">
+<link rel="stylesheet" href="css/style.css?v=20260927e">
+<script>
+  /* 在畫面繪製前套用使用者選過的主題 */
+  try { var t = localStorage.getItem('pb-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top"><span class="brand-ball" aria-hidden="true"></span><span class="brand-name">匹克球自創攻略</span></a>
+    <div class="level-filter" role="group" aria-label="依程度篩選章節">
+      <button type="button" id="lv-all" data-level="all" aria-pressed="true">全部</button>
+      <button type="button" id="lv-1" data-level="1" aria-pressed="false">入門</button>
+      <button type="button" id="lv-2" data-level="2" aria-pressed="false">進階</button>
+      <button type="button" id="lv-3" data-level="3" aria-pressed="false">高手</button>
+    </div>
+    <button type="button" class="theme-btn" id="theme-btn" aria-label="切換深色或淺色">◐</button>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell" id="top">
+  <nav class="toc" aria-label="章節目錄">
+    <div class="toc-title">Chapters</div>
+    <ol id="toc-list"></ol>
+  </nav>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h1><span class="en">PICKLEBALL PLAYBOOK</span>匹克球自創攻略</h1>
+        <p class="lead">從第一次拿拍到打出 Erne、ATP。這份攻略把規則、發球順序、每一拍的任務、丁克、走位補位和攻防戰術一次講清楚，還有 3D 戰術實驗室可以轉視角、放慢動作看。</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#lab">進入 3D 戰術實驗室</a>
+          <a class="btn ghost" href="#rules">從規則開始</a>
+        </div>
+        <div class="legend">
+          <span><span class="tag l1">入門</span> 第一次打、2.0–3.0</span>
+          <span><span class="tag l2">進階</span> 3.5–4.0</span>
+          <span><span class="tag l3">高手</span> 4.5 以上</span>
+        </div>
+      </div>
+      <div class="scoreboard" aria-label="雙打報分範例">
+        <div class="sb-label">雙打開局報分 · Score Call</div>
+        <div class="sb-call"><span>0</span><span class="sep">–</span><span>0</span><span class="sep">–</span><span>2</span></div>
+        <div class="sb-legend">
+          <div><b>發球方分數</b>永遠先報自己</div>
+          <div><b>接發方分數</b>再報對手</div>
+          <div><b>第幾發球員</b>開局只有一次發球權，所以是 2</div>
+        </div>
+        <svg class="iso hero-iso" data-iso="hero" viewBox="0 0 800 380" role="img" aria-label="2.5D 球場：發球對角線與雙跳規則動畫"></svg>
+      </div>
+    </section>
+
+    <!-- ===================== 1. 魅力 ===================== -->
+    <section class="chapter" id="why" data-levels="1 2 3" data-toc="匹克球的魅力">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">01</span> Why Pickleball <span class="tag l1">入門</span></div>
+        <h2>為什麼大家都迷上匹克球</h2>
+      </div>
+      <div class="prose">
+        <p>匹克球（Pickleball）1965 年誕生於美國華盛頓州的班布里奇島。三位爸爸 Joel Pritchard、Bill Bell、Barney McCallum 想讓放暑假的孩子有東西玩，拿桌球拍、打洞塑膠球和羽球場，臨時拼湊出這項運動。它結合了網球、羽球和桌球的元素，場地只有網球場的大約三分之一。</p>
+        <p>近幾年它是美國成長最快的運動之一，職業巡迴賽（PPA Tour、APP Tour）和團體聯賽（Major League Pickleball, MLP）都有電視轉播。台灣各縣市也陸續有球館和公園球場，週末的 open play（自由排隊打）常常一位難求。</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="v num">6.1×13.4 m</span><span class="k">球場寬 × 長，和羽球雙打場一樣大</span></div>
+        <div class="stat"><span class="v num">2.13 m</span><span class="k">廚房（非截擊區）從網子往後的深度</span></div>
+        <div class="stat"><span class="v num">11</span><span class="k">一般賽制打到 11 分、需領先 2 分</span></div>
+        <div class="stat"><span class="v num">15 分鐘</span><span class="k">新手學會發球、回球就能開始打比賽</span></div>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h4>上手超快</h4><p>球拍短、球慢、場地小，沒有運動底子的人第一天就能對打。長輩、小孩、上班族同場也玩得起來。</p></div>
+        <div class="card"><h4>社交性極強</h4><p>大多是雙打，open play 會和陌生人輪流組隊。打幾場就認識一群球友，這是很多人留下來的原因。</p></div>
+        <div class="card"><h4>易學難精</h4><p>丁克比耐心、快手對攻比反應、第三拍比控制。越打越會發現它像下棋，戰術深度不輸任何球拍運動。</p></div>
+      </div>
+      <div class="callout"><div class="c-title">名字的由來</div><p>比較常見的說法有兩個：一是發明者家裡的狗叫 Pickles，總是追著球跑；另一說法是划船術語 pickle boat（由各隊剩下的划手湊成的船），比喻這項運動由各種球類湊成。兩個說法都流傳很久，發明者家族的說法也不完全一致。</p></div>
+    </section>
+
+    <!-- ===================== 2. 場地裝備 ===================== -->
+    <section class="chapter" id="court" data-levels="1" data-toc="場地與裝備">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">02</span> Court &amp; Gear <span class="tag l1">入門</span></div>
+        <h2>場地與裝備</h2>
+      </div>
+      <div class="figure">
+        <svg class="iso" data-iso="dims" viewBox="0 0 800 400" role="img" aria-label="2.5D 球場尺寸圖"></svg>
+        <div class="fig-cap"><span><b>2.5D 球場</b>：綠色是廚房（非截擊區），藍色是發球區。官方規格原為英制，這裡換算成公制。</span>
+          <span class="legend"><span><i style="background:#2b7a58"></i>廚房 NVZ</span><span><i style="background:#1d5d9b"></i>左右發球區</span></span></div>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>項目</th><th>規格</th><th>補充</th></tr></thead>
+        <tbody>
+          <tr><td>球場</td><td class="num">寬 6.10 m × 長 13.41 m</td><td>單打、雙打同一個場地。四周建議留至少 3 公尺緩衝。</td></tr>
+          <tr><td>廚房（Non-Volley Zone）</td><td class="num">網前兩側各 2.13 m（213 cm）</td><td>廚房線屬於廚房。</td></tr>
+          <tr><td>網高</td><td class="num">邊線 91.4 cm、中央 86.4 cm</td><td>中間比較低，所以對角球和中路球比較安全。</td></tr>
+          <tr><td>發球區</td><td class="num">每區寬 3.05 m × 長 4.57 m</td><td>由中線分成左右兩區。</td></tr>
+          <tr><td>球</td><td>打洞塑膠球，直徑 7.29–7.54 cm，重 22.1–26.5 g</td><td>室外球 40 洞、較硬較快；室內球 26 洞左右、較軟較慢。</td></tr>
+          <tr><td>球拍</td><td>長 + 寬 ≤ 60.96 cm，長度 ≤ 43.18 cm</td><td>表面不可有會加強旋轉的粗糙紋理，比賽用拍要在 USA Pickleball 核准清單上。</td></tr>
+        </tbody>
+      </table></div>
+      <div class="grid-2">
+        <div class="card">
+          <h4>挑球拍 <span class="tag l1">入門</span></h4>
+          <ul>
+            <li><b>重量</b>：中量 215–232 g 最泛用。偏輕好操控、快手反應快；偏重好發力、較穩。</li>
+            <li><b>表面</b>：碳纖維（raw carbon）旋轉多、手感紮實；玻璃纖維彈性大、比較省力。</li>
+            <li><b>厚度</b>：16 mm 控球好、甜區大；13–14 mm 比較有力，但比較難控。</li>
+            <li><b>握把</b>：握把周長手小選 10.2 cm 左右，手大選 10.8 cm 以上。太細可以加握把布。</li>
+            <li><b>形狀</b>：寬版（elongated 以外）甜區大，適合新手；長版（elongated）觸及範圍長、單打常用。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>其他裝備</h4>
+          <ul>
+            <li><b>球鞋</b>：一定要穿有側向支撐的室內羽球鞋或網球鞋。跑步鞋不適合，側移很容易扭傷腳踝。</li>
+            <li><b>護目鏡</b>：網前快手對攻時球速很快，很多教練建議戴運動護目鏡。</li>
+            <li><b>球</b>：室外常用 Franklin X-40、Dura Fast 40；室內常用 Onix Fuse Indoor。天冷時硬球容易裂。</li>
+            <li><b>拍套、毛巾、水</b>：夏天在戶外很容易脫水。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. 規則 ===================== -->
+    <section class="chapter" id="rules" data-levels="1 2" data-toc="比賽規則">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">03</span> Rules <span class="tag l1">入門</span><span class="tag l2">進階</span></div>
+        <h2>比賽規則：五條核心規則就能上場</h2>
+        <p class="lead">規則以 USA Pickleball 官方規則書為準（每年 1 月更新）。先記住下面五條，其他細節打久了自然會懂。</p>
+      </div>
+      <ol class="steps">
+        <li><div><b>發球要低手、對角，而且要過廚房</b>站在底線後、中線與邊線延長線之間，發到對角的發球區。球落在廚房或廚房線上是失誤；落在底線、邊線、中線上算好球。每位發球員只有一次發球機會。</div></li>
+        <li><div><b>雙跳規則（Two-Bounce Rule）</b>發球後，接發方必須等球彈地一次才能回；回發球後，發球方也必須等球彈地一次。兩次彈地之後，雙方才可以截擊（空中直接打）。</div></li>
+        <li><div><b>廚房裡不能截擊</b>腳踩在廚房內或廚房線上時，不能截擊。截擊後因為慣性衝進廚房，也算失誤，就算球已經死了也一樣。球彈地之後，可以隨時進廚房打。</div></li>
+        <li><div><b>只有發球方能得分（傳統計分）</b>接發方贏球只會拿回發球權，不會得分。一般打到 11 分，要領先 2 分才算贏；也有 15 分、21 分賽制。</div></li>
+        <li><div><b>壓線算好球</b>球碰到線就是界內，唯一例外是發球落在廚房線上算失誤。自己半場的線由自己判，看不清楚就判對方有利（算好球）。</div></li>
+      </ol>
+
+      <h3>發球的兩種合法方式</h3>
+      <div class="grid-2">
+        <div class="card">
+          <h4>截擊式發球 Volley Serve</h4>
+          <ul>
+            <li>擊球點要<b>明顯</b>在腰（肚臍）以下。</li>
+            <li>揮拍軌跡要<b>明顯</b>由下往上。</li>
+            <li>擊球瞬間，拍頭要<b>明顯</b>不高於手腕最高點。2026 年規則書加上「明顯（clearly）」，就是為了取締側手平擊的擦邊發球。</li>
+            <li>放球時不能用手或拍子讓球轉動（禁止預先旋轉）。球拍擊球那一刻製造的旋轉則是合法的。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>落地式發球 Drop Serve</h4>
+          <ul>
+            <li>球從手上自然放下（不能往下丟或往上拋），彈地後再擊球。</li>
+            <li>彈地後擊球時，不受「腰以下、由下往上、拍頭低於手腕」的限制。</li>
+            <li>新手很推薦，節奏穩定、比較不容易被判違例。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>常見失誤（Fault）</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>失誤</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>出界、掛網</td><td>球落在界外，或沒有過網。</td></tr>
+          <tr><td>違反雙跳規則</td><td>第 2 拍或第 3 拍沒等彈地就截擊。</td></tr>
+          <tr><td>廚房違例</td><td>站在廚房內或踩線截擊；截擊後慣性進廚房；球拍或衣物、帽子掉進廚房也算。</td></tr>
+          <tr><td>碰網</td><td>球還在進行時，身體、衣物、球拍碰到網子或網柱。</td></tr>
+          <tr><td>球打到身上</td><td>被球打到（含拿拍的手以外的身體部位）就是失分，就算人站在界外也一樣。握拍的手在握拍時被打到，視為球拍的一部分。</td></tr>
+          <tr><td>越網擊球</td><td>球還沒過網就伸過網去打。例外：球已經在你這邊彈地、又被旋轉或風帶回對面時，可以跟過網去打，但不能碰網。</td></tr>
+          <tr><td>發球違例</td><td>腳踩線或踩進場內、發錯區、發錯人、落在廚房。</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4>容易搞錯的規則 <span class="tag l2">進階</span></h4>
+          <ul>
+            <li><b>發球擦網</b>：擦網後落在正確區域是好球，要繼續打。舊的 let 重發規則已經取消。</li>
+            <li><b>離開廚房後再截擊</b>：進過廚房的人要雙腳都重新踩回廚房外，才能截擊。</li>
+            <li><b>Erne 合法</b>：從邊線外、廚房延長區旁邊截擊是合法的，只要跳躍前沒有踩到廚房。</li>
+            <li><b>ATP 合法</b>：球從網柱外側繞過來，不經過網子上方、甚至低於網高都可以。</li>
+            <li><b>連擊</b>：在同一個連續、同方向的揮拍動作中碰到兩下，算合法。</li>
+            <li><b>線判</b>：2026 年起明文規定不可以問觀眾線判。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>賽制與比賽流程</h4>
+          <ul>
+            <li><b>暫停</b>：11 分賽制每隊每局 2 次暫停，每次 1 分鐘。</li>
+            <li><b>換場</b>：三局兩勝的決勝局，有一隊先到 6 分時換邊。</li>
+            <li><b>Rally Scoring（每球得分）</b>：2026 年仍是 USA Pickleball 的「暫行規則」，由賽事主辦決定是否採用。每一球都會得分，接發方也能直接拿下局點。MLP 的雙打已改回傳統計分，只有決勝的 DreamBreaker 用每球得分打到 21 分。</li>
+            <li><b>網柱新規（2026）</b>：球在對方場內彈地後，因旋轉或風撞到網柱，擊球方得分。</li>
+            <li><b>報分</b>：發球員發球前必須大聲報分，報完才可以發球。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="keypoints"><div class="kp-title">重點整理</div><ul>
+        <li>發球：低手、對角、過廚房，一人一次機會。</li>
+        <li>前兩次回球都要讓球彈地（雙跳），之後才能截擊。</li>
+        <li>在廚房裡、踩線都不能截擊，衝進去也不行。</li>
+      </ul></div>
+    </section>
+
+    <!-- ===================== 4. 發球順序 ===================== -->
+    <section class="chapter" id="serve-order" data-levels="1 2" data-toc="發球順序與報分">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">04</span> Serving Order <span class="tag l1">入門</span><span class="tag l2">進階</span></div>
+        <h2>發球順序與報分</h2>
+        <p class="lead">新手最常卡在這裡。記住三件事：誰發球、從哪一邊發、報什麼數字。下面的模擬器可以一球一球按，看分數和站位怎麼變。</p>
+      </div>
+      <div class="prose">
+        <ul>
+          <li><b>報分是三個數字</b>：發球方分數 – 接發方分數 – 第幾發球員（1 或 2）。例如 <span class="num">5-3-1</span>。</li>
+          <li><b>開局是 0-0-2</b>：為了公平，先發球的隊伍開局只有一位球員可以發球，所以直接從「第 2 發球員」開始。</li>
+          <li><b>永遠從右邊（偶數區）開始</b>：每次拿到發球權，都是站在右邊發球區的人先發。</li>
+          <li><b>得分就換邊</b>：發球方得分後，發球員和隊友交換左右，同一個人繼續發下一球，改從另一邊發。</li>
+          <li><b>失分就換人</b>：第 1 發球員失分，換隊友當第 2 發球員（從他當下站的位置發）；第 2 發球員失分，換對手發球（side out）。</li>
+          <li><b>接發方不換邊</b>：接發方怎麼樣都不會交換左右。</li>
+          <li><b>站位檢查</b>：發球方分數是偶數時，開局站右邊的那位會在右邊；奇數時在左邊。忘記站位時用這條檢查。</li>
+        </ul>
+      </div>
+
+      <div class="rotator" id="rotator">
+        <div class="rot-board">
+          <div class="sb-label" style="font:700 .75rem/1 var(--f-display);letter-spacing:.2em;color:#7f98a2">目前報分</div>
+          <div class="rot-call" id="rot-call">0-0-2</div>
+          <div class="rot-meta" id="rot-meta"></div>
+          <div class="rot-btns">
+            <button type="button" class="rot-win" id="rot-win">發球方得分</button>
+            <button type="button" class="rot-lose" id="rot-lose">發球方失分</button>
+            <button type="button" class="rot-reset" id="rot-reset">重新開局</button>
+          </div>
+        </div>
+        <div style="display:grid;gap:.7rem;min-width:0">
+          <svg class="iso" id="rot-svg" data-iso="rotator" viewBox="0 0 800 380" role="img" aria-label="發球站位 2.5D 圖"></svg>
+          <div class="rot-log" id="rot-log"></div>
+          <div class="rot-history" id="rot-history" aria-label="報分紀錄"></div>
+        </div>
+      </div>
+
+      <div class="callout"><div class="c-title">單打怎麼發？</div><p>單打只報兩個數字（發球方 – 接發方）。發球方分數是偶數時從右邊發，奇數從左邊發；失分直接換對手發球。</p></div>
+    </section>
+
+    <!-- ===================== 5. 回合結構 ===================== -->
+    <section class="chapter" id="shot-sequence" data-levels="1 2" data-toc="每一拍的任務">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">05</span> Shot Sequence <span class="tag l1">入門</span><span class="tag l2">進階</span></div>
+        <h2>進攻順序：每一拍的任務</h2>
+        <p class="lead">雙打的核心目標只有一個：搶先站上廚房線。雙跳規則讓接發方先天有優勢，發球方要靠第三拍追上來。</p>
+      </div>
+      <div class="figure">
+        <svg class="iso" data-iso="sequence" viewBox="0 0 800 400" role="img" aria-label="第一拍到第五拍的 2.5D 動畫"></svg>
+        <div class="fig-cap"><span><b>第 1 拍到第 5 拍</b>：黃色是球的軌跡，虛線是移動路線。</span><button type="button" class="iso-replay" data-replay="sequence">重播</button></div>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>拍數</th><th>誰打</th><th>目標</th><th>常見錯誤</th></tr></thead>
+        <tbody>
+          <tr><td><b>第 1 拍</b> 發球</td><td>發球方</td><td>深、穩。發到底線附近，讓對手不能輕鬆上網。職業選手會加上旋轉和變化落點。</td><td>想發 ACE 結果失誤。發球失誤等於白送發球權。</td></tr>
+          <tr><td><b>第 2 拍</b> 回發球</td><td>接發方</td><td>回深、回高、慢一點都可以，爭取時間衝到廚房線。回到對手反手更好。</td><td>回完站在原地看球；回太淺讓對手輕鬆打第三拍。</td></tr>
+          <tr><td><b>第 3 拍</b></td><td>發球方</td><td>放短（drop）進廚房讓自己上網，或抽球（drive）逼對手打出高球，也可以挑高球。</td><td>一味抽球不上網；放短太高被對手截擊。</td></tr>
+          <tr><td><b>第 4 拍</b></td><td>接發方（已在網前）</td><td>對手放得好就丁克回廚房；放太高就截擊攻擊對手腳下。</td><td>還沒站穩就亂攻；後退去打球。</td></tr>
+          <tr><td><b>第 5 拍</b></td><td>發球方</td><td>繼續放短或重置（reset），一步一步推進到廚房線。</td><td>還在過渡區就想打致勝球。</td></tr>
+        </tbody>
+      </table></div>
+      <div class="keypoints"><div class="kp-title">重點整理</div><ul>
+        <li>接發方：回深，然後<b>一定要上網</b>。</li>
+        <li>發球方：前三拍都在後場，第三拍的目標是「上網的時間」，不是得分。</li>
+        <li>雙方都上網後，就進入丁克戰。</li>
+      </ul></div>
+    </section>
+
+    <!-- ===================== 3D LAB ===================== -->
+    <section class="chapter" id="lab" data-levels="1 2 3" data-toc="3D 戰術實驗室">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">06</span> 3D Tactics Lab <span class="tag l1">入門</span><span class="tag l2">進階</span><span class="tag l3">高手</span></div>
+        <h2>3D 戰術實驗室</h2>
+        <p class="lead">選一個戰術，看四位球員怎麼移動、球怎麼飛。可以拖曳旋轉、滾輪縮放、切換視角，速度調到 0.25 倍看細節。藍隊在近端，橘隊在遠端。</p>
+      </div>
+      <div class="lab">
+        <div class="lab-stage" id="lab-stage">
+          <div class="lab-status" id="lab-status">3D 場景載入中…</div>
+          <div class="lab-cams" role="group" aria-label="視角">
+            <button type="button" id="cam-broadcast" data-cam="broadcast" aria-pressed="true">轉播視角</button>
+            <button type="button" id="cam-side" data-cam="side" aria-pressed="false">側面</button>
+            <button type="button" id="cam-top" data-cam="top" aria-pressed="false">俯視</button>
+            <button type="button" id="cam-player" data-cam="player" aria-pressed="false">球員視角</button>
+          </div>
+          <div class="lab-caption" id="lab-caption"><span class="cap-step" id="cap-step">準備</span><span id="cap-text">選一個戰術開始播放。</span></div>
+        </div>
+        <div class="lab-side">
+          <h4>戰術劇本</h4>
+          <div class="scn-list" id="scn-list"></div>
+          <div class="lab-ctrl">
+            <button type="button" id="lab-play">暫停</button>
+            <button type="button" id="lab-replay">重播</button>
+            <label for="lab-speed">速度
+              <select id="lab-speed">
+                <option value="0.25">0.25×</option>
+                <option value="0.5">0.5×</option>
+                <option value="0.75" selected>0.75×</option>
+                <option value="1">1×</option>
+              </select>
+            </label>
+            <label for="lab-rope"><input type="checkbox" id="lab-rope" checked> 繩子線</label>
+          </div>
+          <p class="lab-desc" id="lab-desc"></p>
+          <p class="lab-foot">真人球員模型：<a href="https://github.com/microsoft/Microsoft-Rocketbox" target="_blank" rel="noopener">Microsoft Rocketbox</a>（MIT 授權，Sports_Male_04、Sports_Female_02、Male_Adult_01、Female_Adult_12），揮拍與準備姿勢為程式即時計算。3D 引擎：<a href="https://github.com/mrdoob/three.js" target="_blank" rel="noopener">three.js</a>（MIT）。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 7. 基本技巧 ===================== -->
+    <section class="chapter" id="fundamentals" data-levels="1 2" data-toc="基本技巧">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">07</span> Fundamentals <span class="tag l1">入門</span><span class="tag l2">進階</span></div>
+        <h2>基本技巧</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h4>握拍 <span class="tag l1">入門</span></h4>
+          <ul>
+            <li><b>大陸式握拍（Continental）</b>：像握鐵鎚，虎口對準握把側邊。正反手都不用換握，網前反應最快，最推薦。</li>
+            <li><b>東方式握拍（Eastern）</b>：像和拍子握手，正手抽球好發力，新手容易上手。</li>
+            <li><b>握力 1–10 分</b>：平常握 3–4 分，丁克 2–3 分，抽球、殺球瞬間才加到 6–7 分。握太緊是新手控球差的頭號原因。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>準備姿勢 Ready Position <span class="tag l1">入門</span></h4>
+          <ul>
+            <li>雙腳與肩同寬或稍寬，膝蓋微彎，重心在前腳掌。</li>
+            <li>球拍放在胸前、拍頭朝上，大約 11 點到 1 點方向，同時照顧正反手。</li>
+            <li>網前時手肘在身體前方，不要把拍子垂到腰下。</li>
+            <li><b>分腿墊步（Split Step）</b>：對手擊球的瞬間小跳一下、雙腳落地，就能往任何方向起動。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>發球 <span class="tag l1">入門</span><span class="tag l2">進階</span></h4>
+          <ul>
+            <li>入門：先求 95% 以上的成功率，瞄準對方發球區中間偏深。</li>
+            <li>進階：發深到底線 1 公尺以內；變化落點（外角拉開、中線、身體）。</li>
+            <li>加旋轉：由下往上刷出上旋，或由內往外刷出側旋。</li>
+            <li>站位靠近中線發，發完比較容易守中路。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>回發球 <span class="tag l1">入門</span></h4>
+          <ul>
+            <li>站在底線後 1 公尺左右，發球通常比你想的深。</li>
+            <li>回深比回快重要。深球逼對方留在底線，替你爭取上網的時間。</li>
+            <li>擊球後往前走，但在對手擊球前做 split step。</li>
+            <li>回到對手反手，或回到兩人中間，讓他們猶豫。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>正手與反手 <span class="tag l1">入門</span></h4>
+          <ul>
+            <li>用肩膀和身體轉動發力，不要只用手腕甩。</li>
+            <li>擊球點在身體前方，拍面朝著目標方向送出去。</li>
+            <li>雙手反手：類似網球雙反，穩定度高，適合力量不夠的人。</li>
+            <li>單手反手切球：拍面打開，由高到低切，打出低、帶下旋的球。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>截擊 Volley <span class="tag l2">進階</span></h4>
+          <ul>
+            <li><b>Block（擋）</b>：拍面固定、幾乎不揮拍，借對方的力量擋回廚房。防守快球用。</li>
+            <li><b>Punch Volley（推擊）</b>：短促的前推，打向對手腳下或身體。</li>
+            <li><b>Roll Volley（刷上旋截擊）</b>：由下往上刷，把低於網的球變成往下掉的攻擊球。高手招牌。</li>
+            <li>截擊時腳不能在廚房裡。截完後注意不要被慣性帶進廚房。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 8. 第三拍 ===================== -->
+    <section class="chapter" id="third-shot" data-levels="2 3" data-toc="第三拍：放短與抽球">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">08</span> Third Shot <span class="tag l2">進階</span><span class="tag l3">高手</span></div>
+        <h2>第三拍：放短、抽球、挑高</h2>
+        <p class="lead">第三拍決定發球方能不能上網，被稱為匹克球最重要的一拍。</p>
+      </div>
+      <div class="figure">
+        <svg class="iso" data-iso="third" viewBox="0 0 800 400" role="img" aria-label="第三拍放短與抽球的軌跡比較"></svg>
+        <div class="fig-cap"><span><b>三種第三拍的軌跡</b>：放短在網前落下、抽球又低又平、挑高過對手頭頂。</span><button type="button" class="iso-replay" data-replay="third">重播</button></div>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h4>放短 Third Shot Drop</h4>
+          <ul><li>用肩膀帶動、手腕固定，像從下往上「推」一個拋物線。</li>
+          <li>弧線最高點在自己這側，過網後開始下墜，落進對方廚房。</li>
+          <li>寧可稍高、稍深，也不要掛網。</li>
+          <li>放短後往前走 2–3 步，對手擊球時 split step。</li></ul></div>
+        <div class="card"><h4>抽球 Third Shot Drive</h4>
+          <ul><li>對手回發球太淺、太高，或對手網前截擊不穩時使用。</li>
+          <li>打低、打平、打到對手身體或腳下，逼出浮球。</li>
+          <li>抽完不要急著衝，準備第五拍再放短。</li>
+          <li>高手常「抽加放」組合：第三拍抽、第五拍放短。</li></ul></div>
+        <div class="card"><h4>挑高 Third Shot Lob</h4>
+          <ul><li>對手很貼網、或兩人都擠在網前時的奇招。</li>
+          <li>挑到對手反手側底線附近。</li>
+          <li>太短會被殺球，使用頻率要低。</li></ul></div>
+      </div>
+      <div class="callout"><div class="c-title">過渡區 Transition Zone</div><p>底線到廚房線中間的區域，舊稱「無人區」（no man's land）。在這裡，對手的球都會打在你腳邊，是最難處理的位置。原則是不要停在這裡；對手擊球時要停下 split step，把球重置（reset）回廚房後再往前走。</p></div>
+      <div class="grid-2">
+        <div class="card"><h4>重置 Reset <span class="tag l2">進階</span></h4>
+          <ul><li>把對手打過來的快球「卸力」，軟軟地回到廚房裡，讓局面回到丁克。</li>
+          <li>拍面稍微打開、握力放輕、手臂往前送，而不是往後拉。</li>
+          <li>身體放低，視線和球同高。</li></ul></div>
+        <div class="card"><h4>練習：第三拍放短 <span class="tag l2">進階</span></h4>
+          <ul><li>夥伴站網前餵球到底線，你連續放短 20 球，計算落進廚房的數量。</li>
+          <li>進階：每放一球往前一步，練習邊走邊放（「7 步走上網」練習）。</li></ul></div>
+      </div>
+    </section>
+
+    <!-- ===================== 9. 丁克 ===================== -->
+    <section class="chapter" id="dinks" data-levels="1 2 3" data-toc="丁克專章：短丁克與長丁克">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">09</span> Dinking <span class="tag l1">入門</span><span class="tag l2">進階</span><span class="tag l3">高手</span></div>
+        <h2>丁克專章：短丁克與長丁克</h2>
+        <p class="lead">丁克（Dink）是站在廚房線前，把球輕輕打進對方廚房的軟球。它的目的是讓對手打不出攻擊球，耐心等對方先犯錯或打出高球。</p>
+      </div>
+      <div class="figure">
+        <svg class="iso" data-iso="dinks" viewBox="0 0 800 400" role="img" aria-label="短丁克與長丁克落點區域"></svg>
+        <div class="fig-cap"><span><b>落點區</b>：黃區是短丁克（貼網），綠區是長丁克（貼廚房線、拉對角）。</span><button type="button" class="iso-replay" data-replay="dinks">重播</button></div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h4>短丁克 Short Dink <span class="tag l1">入門</span></h4>
+          <p>落點離網很近，大約網前 30–60 公分。</p>
+          <ul>
+            <li><b>效果</b>：逼對手往前踩進廚房、彎腰撈球，球很難被攻擊。</li>
+            <li><b>時機</b>：對手站得比較後面，或是身高很高、重心不低的對手。</li>
+            <li><b>風險</b>：太貼網容易掛網，打太高會變成對手腰部高度的好球。</li>
+            <li><b>技巧</b>：拍面稍開、動作小，用肩膀輕輕送出去，像把雞蛋放到網前。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>長丁克 Long Dink <span class="tag l2">進階</span></h4>
+          <p>落點很深，靠近對方廚房線或對方腳下，常搭配對角線使用。</p>
+          <ul>
+            <li><b>效果</b>：球落在對手腳邊，讓他只能往上撈，很難攻擊，還會逼他退後。</li>
+            <li><b>對角長丁克</b>：對角的飛行距離最長、中間的網最低，是容錯率最高的丁克，職業賽最常見。</li>
+            <li><b>拉開角度</b>：對角長丁克打到邊線外角，把對手拉出場外，替中路或 ATP 製造空檔。</li>
+            <li><b>風險</b>：落點太深會出廚房，變成對手可以直接截擊的好球。</li>
+          </ul>
+        </div>
+      </div>
+      <h3>丁克的變化 <span class="tag l3">高手</span></h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>種類</th><th>做法</th><th>用途</th></tr></thead>
+        <tbody>
+          <tr><td>直線丁克</td><td>打向正對面的對手</td><td>距離短、要求準度，常用來打亂對角節奏。</td></tr>
+          <tr><td>中路丁克</td><td>打到兩人中間</td><td>製造「誰要接」的猶豫，也能減少對手的角度。</td></tr>
+          <tr><td>上旋丁克</td><td>由下往上刷</td><td>球落地後往前竄，讓對手手忙腳亂。</td></tr>
+          <tr><td>切削丁克</td><td>拍面打開由高往低切</td><td>球低、彈跳小，對手很難刷上旋攻擊。</td></tr>
+          <tr><td>攻擊性丁克</td><td>速度快一點、落在對手反手腳下</td><td>不是求致勝，而是逼對手打出稍高的球。</td></tr>
+          <tr><td>截擊丁克</td><td>不等彈地，在空中直接丁克</td><td>減少對手的反應時間，也能讓自己留在廚房線不必後退。</td></tr>
+        </tbody>
+      </table></div>
+      <div class="grid-2">
+        <div class="card"><h4>丁克的心法</h4>
+          <ul><li><b>耐心</b>：職業賽的丁克來回常超過 20 拍。誰先不耐煩、打出高球，誰就被攻擊。</li>
+          <li><b>低於網的球不要攻</b>：球在網子以下時，繼續丁克；球高於網時才考慮攻擊。</li>
+          <li><b>腳比手重要</b>：移動到球的後面，用身體對準目標，不要只伸手去撈。</li>
+          <li><b>目標是「不能被攻擊」</b>：好的丁克不是讓對手打不到，而是讓他打不出攻擊球。</li></ul></div>
+        <div class="card"><h4>丁克練習菜單</h4>
+          <ul><li><b>對角 50 下</b>：兩人對角丁克，連續 50 下不失誤。</li>
+          <li><b>直線 + 對角輪流</b>：一球直線、一球對角，練習移動。</li>
+          <li><b>只能打長丁克</b>：落點要超過廚房中線，練習深度控制。</li>
+          <li><b>Skinny Singles</b>：只用半場打丁克單打，會攻擊的人才加分。</li></ul></div>
+      </div>
+      <div class="keypoints"><div class="kp-title">重點整理</div><ul>
+        <li>短丁克逼對手往前、長丁克逼對手退後，兩種混著打。</li>
+        <li>對角丁克容錯率最高，是丁克戰的主軸。</li>
+        <li>球低於網就忍住，等對手先把球打高。</li>
+      </ul></div>
+    </section>
+
+    <!-- ===================== 10. 攻擊 ===================== -->
+    <section class="chapter" id="attack" data-levels="2 3" data-toc="攻擊武器">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">10</span> Attack <span class="tag l2">進階</span><span class="tag l3">高手</span></div>
+        <h2>攻擊武器：什麼時候打、打哪裡</h2>
+        <p class="lead">攻擊的關鍵在選球。能攻擊的球是「高於網、在你面前、你重心穩」的球。</p>
+      </div>
+      <div class="grid-2">
+        <div class="card"><h4>突擊 Speed-up <span class="tag l2">進階</span></h4>
+          <ul><li>在丁克戰中突然加速，打向對手握拍側的肩膀或臀部。</li>
+          <li>最佳目標是右撇子的右肩（正手肩）與拍子之間，對手很難調整拍面。</li>
+          <li>動作要小、隱藏意圖，用手腕和前臂短促發力。</li>
+          <li>打完馬上準備 counter，對手很可能反擊。</li></ul></div>
+        <div class="card"><h4>快手對攻 Hands Battle <span class="tag l3">高手</span></h4>
+          <ul><li>雙方在網前連續截擊。拍子要放在胸前、動作極小。</li>
+          <li>反手在身體前方的覆蓋面比正手大，高手多用反手處理身體球。</li>
+          <li>把球往下打，打向對手腳下或往下的角度，讓對手只能往上擋。</li>
+          <li>往上打的球，就是送給對手的攻擊機會。</li></ul></div>
+        <div class="card"><h4>殺球 Overhead Smash <span class="tag l2">進階</span></h4>
+          <ul><li>對手挑高球太短時使用。側身、非持拍手指向球。</li>
+          <li>打向對手腳下或打角度，不要只追求力量。</li>
+          <li>往後退時側身交叉步，千萬不要背對網倒退走，很容易跌倒受傷。</li></ul></div>
+        <div class="card"><h4>挑高球 Lob <span class="tag l2">進階</span></h4>
+          <ul><li><b>進攻型挑高</b>：趁對手貼網或往前傾時，挑過反手側頭頂。</li>
+          <li><b>防守型挑高</b>：被壓制時挑高爭取時間。</li>
+          <li>有風的日子順風挑容易出界，逆風挑比較安全。</li></ul></div>
+        <div class="card"><h4>Erne <span class="tag l3">高手</span></h4>
+          <ul><li>以發明者 Erne Perry 命名。對手沿邊線打直線丁克時，你從廚房旁邊跳出場外（或走出邊線外），在網邊直接截擊。</li>
+          <li>起跳前腳不能踩廚房，落地在場外就合法。</li>
+          <li>觀察對手習慣打直線、而且打得偏高時使用。</li></ul></div>
+        <div class="card"><h4>ATP（Around The Post）<span class="tag l3">高手</span></h4>
+          <ul><li>對手把你拉到邊線外很遠的地方時，讓球從網柱外側繞過去，不必過網上方。</li>
+          <li>球可以很低、甚至低於網高，對手幾乎不可能截擊。</li>
+          <li>通常由對角的長丁克拉開角度後出現。</li></ul></div>
+      </div>
+      <div class="figure">
+        <svg class="iso" data-iso="specials" viewBox="0 0 800 400" role="img" aria-label="Erne 與 ATP 示意圖"></svg>
+        <div class="fig-cap"><span><b>Erne（左）與 ATP（右）</b>：Erne 從廚房旁的場外截擊，ATP 從網柱外側繞回去。</span><button type="button" class="iso-replay" data-replay="specials">重播</button></div>
+      </div>
+      <div class="callout"><div class="c-title">攻擊目標優先順序</div><p>1. 對手的腳下（只能往上撈）→ 2. 兩人中間（誰都不確定要接）→ 3. 持拍側肩膀（很難調整拍面）→ 4. 空檔大角度。對手站在廚房線時，打腳下；對手在後場時，打短或打中路。</p></div>
+    </section>
+
+    <!-- ===================== 11. 防守 ===================== -->
+    <section class="chapter" id="defense" data-levels="2 3" data-toc="防守與反擊">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">11</span> Defense <span class="tag l2">進階</span><span class="tag l3">高手</span></div>
+        <h2>防守與反擊</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h4>Block 擋球</h4><p>面對快球，拍面固定在身體前方，吸收力量擋回廚房。手臂像海綿，不要主動揮拍。</p></div>
+        <div class="card"><h4>Counter 反擊</h4><p>對手的突擊不夠低、不夠快時，直接在網前反打回去，打向對手腳下或身體。判斷的依據是：球是否高於你的胸口。</p></div>
+        <div class="card"><h4>退後重置</h4><p>被壓在後場時，先打高深的球或挑高爭取時間，再用重置回到丁克。不要硬拚。</p></div>
+      </div>
+      <div class="prose">
+        <h3>防守的三個習慣</h3>
+        <ul>
+          <li><b>拍子永遠在前面</b>：打完每一球立刻回到準備位置。</li>
+          <li><b>往下看的時候就退一步</b>：對手在高處準備殺球時，後退一步、降低重心，多爭取 0.1 秒反應時間。</li>
+          <li><b>看對手的拍面</b>：拍面朝下是往下打，朝上是挑高或丁克，比看球更早判斷。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== 12. 走位補位 ===================== -->
+    <section class="chapter" id="positioning" data-levels="1 2 3" data-toc="走位與補位">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">12</span> Positioning <span class="tag l1">入門</span><span class="tag l2">進階</span><span class="tag l3">高手</span></div>
+        <h2>走位與補位：兩個人像被一條繩子綁住</h2>
+        <p class="lead">雙打輸球最常見的原因不是技術，是兩人之間出現空洞。</p>
+      </div>
+      <div class="figure">
+        <svg class="iso" data-iso="rope" viewBox="0 0 800 400" role="img" aria-label="繩子效應與偏移站位"></svg>
+        <div class="fig-cap"><span><b>繩子效應與偏移（Shading）</b>：球往哪邊，兩人一起往哪邊偏，中間保持約 3 公尺。</span><button type="button" class="iso-replay" data-replay="rope">重播</button></div>
+      </div>
+      <div class="grid-2">
+        <div class="card"><h4>繩子效應 <span class="tag l1">入門</span></h4>
+          <ul><li>兩人之間像綁著一條約 3 公尺的繩子：一起上網、一起退、一起往左右偏。</li>
+          <li>最忌諱「一前一後」站位，對手會打兩人之間的斜線空洞。</li></ul></div>
+        <div class="card"><h4>偏移站位 Shading <span class="tag l2">進階</span></h4>
+          <ul><li>球在對方右側，你們就一起往左偏（面對網），封住直線和中路。</li>
+          <li>離球比較近的人守邊線，另一位補中間。</li></ul></div>
+        <div class="card"><h4>中路球誰接？ <span class="tag l2">進階</span></h4>
+          <ul><li><b>正手優先</b>：通常由正手在中間的人接。右撇子搭右撇子時，左區的人正手在中間。</li>
+          <li><b>對角原則</b>：球從對角打過來時，對角的人角度較好，由他接。</li>
+          <li><b>事先講好</b>，比賽中喊「我的」、「你的」。</li></ul></div>
+        <div class="card"><h4>換位 Switch <span class="tag l2">進階</span></h4>
+          <ul><li>挑高球越過隊友頭頂時，另一位斜著跑到後面接，喊「Switch！」。</li>
+          <li>被挑的人往另一邊移動補位，兩人交換左右。</li></ul></div>
+        <div class="card"><h4>搶攻 Poach <span class="tag l3">高手</span></h4>
+          <ul><li>跨過中線去截擊原本是隊友的球。</li>
+          <li>時機：隊友打出好的放短或抽球，對手只能回出高、慢、往中間的球。</li>
+          <li>搶攻要果斷，隊友看到要立刻補你空出來的位置。</li></ul></div>
+        <div class="card"><h4>疊位 Stacking <span class="tag l3">高手</span></h4>
+          <ul><li>發球或接發時，兩人先站在同一側，發完或接完再移動到固定的一邊。</li>
+          <li>目的：讓左撇子或正手強的人固定在中路，或讓強的人固定打自己擅長的一邊。</li>
+          <li>要記清楚誰是「原本右邊的人」，不然會發錯人、接錯球。</li></ul></div>
+      </div>
+      <div class="figure">
+        <svg class="iso" data-iso="stack" viewBox="0 0 800 400" role="img" aria-label="疊位站法示意"></svg>
+        <div class="fig-cap"><span><b>疊位與 Shake &amp; Bake</b>：藍隊兩人站同一側發球，發完再分開；第三拍抽球時，隊友衝網搶攻第四拍。</span><button type="button" class="iso-replay" data-replay="stack">重播</button></div>
+      </div>
+    </section>
+
+    <!-- ===================== 13. 單打 ===================== -->
+    <section class="chapter" id="singles" data-levels="2" data-toc="單打策略">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">13</span> Singles <span class="tag l2">進階</span></div>
+        <h2>單打策略</h2>
+      </div>
+      <div class="prose">
+        <ul>
+          <li><b>發球要深</b>：單打的發球更有威脅，深球讓對手無法快速上網。</li>
+          <li><b>接發球後上網</b>：接發方可以用回深加上網取得優勢。</li>
+          <li><b>第三拍多用抽球或穿越球</b>：單打場地一個人守，放短不一定是首選。</li>
+          <li><b>打角度與穿越球</b>：直線穿越和斜線角度交替，讓對手跑。</li>
+          <li><b>體能</b>：單打移動量是雙打的好幾倍，要練步伐和耐力。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== 14. 分級學習 ===================== -->
+    <section class="chapter" id="levels" data-levels="1 2 3" data-toc="分級學習路徑">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">14</span> Learning Path <span class="tag l1">入門</span><span class="tag l2">進階</span><span class="tag l3">高手</span></div>
+        <h2>分級學習路徑與練習菜單</h2>
+        <p class="lead">常見的程度分級有 USA Pickleball 自評等級（2.0–5.5+）和 DUPR 動態積分（2.000–8.000，依比賽結果計算）。下面用自評等級說明。</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h4><span class="tag l1">入門</span> 2.0–3.0</h4>
+          <ul><li>目標：發球穩、回發球能過網、懂計分和站位。</li>
+          <li>每週練習：發球 50 球、回發球 50 球、對角丁克 10 分鐘。</li>
+          <li>比賽重點：回發球後上網；不要站在過渡區。</li>
+          <li>里程碑：一場比賽發球失誤少於 2 次。</li></ul></div>
+        <div class="card"><h4><span class="tag l2">進階</span> 3.5–4.0</h4>
+          <ul><li>目標：第三拍放短成功率 60%、丁克 20 拍不失誤、會重置。</li>
+          <li>每週練習：第三拍放短 100 球、7 步走上網、speed-up 與 counter 對練。</li>
+          <li>比賽重點：選球，只攻高於網的球；和隊友練習繩子效應。</li>
+          <li>里程碑：可以用第三拍把發球方帶到網前。</li></ul></div>
+        <div class="card"><h4><span class="tag l3">高手</span> 4.5 以上</h4>
+          <ul><li>目標：上旋截擊、反手快手、Erne、ATP、疊位戰術。</li>
+          <li>每週練習：快手對攻、刷上旋丁克、錄影分析自己的站位。</li>
+          <li>比賽重點：針對對手弱點排戰術，控制比賽節奏。</li>
+          <li>里程碑：DUPR 分數穩定上升、參加地區賽事。</li></ul></div>
+      </div>
+      <div class="callout"><div class="c-title">熱身建議（10 分鐘）</div><p>慢跑 2 分鐘 → 側併步與交叉步 2 分鐘 → 肩膀與手腕繞環 → 網前丁克 3 分鐘 → 中場截擊 2 分鐘 → 發球與回發球。年長球友要特別注意小腿、阿基里斯腱和肩膀。</p></div>
+    </section>
+
+    <!-- ===================== 15. 禮儀 ===================== -->
+    <section class="chapter" id="etiquette" data-levels="1" data-toc="Open Play 禮儀">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">15</span> Etiquette <span class="tag l1">入門</span></div>
+        <h2>Open Play 禮儀</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card"><h4>排隊與輪替</h4>
+          <ul><li><b>放拍排隊（paddle stacking）</b>：把球拍放在排隊架上，依序四人一組上場。</li>
+          <li><b>4 上 4 下</b>：一場打完，四人都下場，換下一組。有的球場採輸家下場，先問清楚。</li>
+          <li>打完馬上離場，不要在場上聊天。</li></ul></div>
+        <div class="card"><h4>比賽中</h4>
+          <ul><li>發球前大聲報分，讓四個人都聽到。</li>
+          <li>自己半場的線自己判，看不清就判好球。</li>
+          <li>球滾到隔壁場，大喊「Ball on court！」，隔壁球員會停下。</li>
+          <li>打到對手身上要道歉，常見的手勢是舉拍示意。</li>
+          <li>結束時在網前碰拍致意。</li></ul></div>
+        <div class="card"><h4>和新手同場</h4>
+          <ul><li>別對新手猛力抽球或一直打同一人。</li>
+          <li>對方問才給建議，不要邊打邊教學。</li></ul></div>
+        <div class="card"><h4>和高手同場</h4>
+          <ul><li>不要搶球、盡量站在自己的位置。</li>
+          <li>專注把球回深、回穩，就是好隊友。</li></ul></div>
+      </div>
+    </section>
+
+    <!-- ===================== 16. 常見錯誤 ===================== -->
+    <section class="chapter" id="mistakes" data-levels="1 2" data-toc="常見錯誤 Top 15">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">16</span> Common Mistakes <span class="tag l1">入門</span><span class="tag l2">進階</span></div>
+        <h2>常見錯誤 Top 15 與修正方法</h2>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>錯誤</th><th>修正方法</th></tr></thead>
+        <tbody id="mistake-rows"></tbody>
+      </table></div>
+    </section>
+
+    <!-- ===================== 17. 術語 ===================== -->
+    <section class="chapter" id="glossary" data-levels="1 2 3" data-toc="中英術語表">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">17</span> Glossary <span class="tag l1">入門</span></div>
+        <h2>中英術語表</h2>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>英文</th><th>中文</th><th>意思</th></tr></thead>
+        <tbody id="glossary-rows"></tbody>
+      </table></div>
+    </section>
+
+    <!-- ===================== 18. 測驗 ===================== -->
+    <section class="chapter" id="quiz" data-levels="1 2 3" data-toc="小測驗">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">18</span> Quiz <span class="tag l1">入門</span><span class="tag l2">進階</span></div>
+        <h2>小測驗：你真的懂了嗎？</h2>
+        <p class="lead">共 10 題，選完馬上看解答。<span class="quiz-score" id="quiz-score">0 / 10</span></p>
+      </div>
+      <div class="quiz" id="quiz-list"></div>
+    </section>
+
+    <!-- ===================== 站位練習題 ===================== -->
+    <section class="chapter" id="drill" data-levels="1 2 3" data-toc="站位練習題">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">19</span> Positioning Drill <span class="tag l1">入門</span><span class="tag l2">進階</span><span class="tag l3">高手</span></div>
+        <h2>站位練習題：這一球，你該站哪裡？</h2>
+        <p class="lead">共 8 個比賽情境。你是 <b>藍 1</b>，直接在球場上點你要站的位置，系統會告訴你對不對、正確位置在哪，以及為什麼。</p>
+      </div>
+      <div class="drill">
+        <div class="drill-stage">
+          <svg class="iso" id="drill-svg" viewBox="0 0 800 400" role="img" aria-label="站位練習球場，點擊選擇站位"></svg>
+          <div class="drill-tip" id="drill-tip">點球場選擇你的位置</div>
+        </div>
+        <div class="drill-side">
+          <div class="drill-top"><span class="drill-count" id="drill-count">第 1 / 8 題</span><span class="drill-score" id="drill-score">得分 0</span></div>
+          <div class="drill-progress" id="drill-progress" aria-hidden="true"></div>
+          <h4 class="drill-q" id="drill-q"></h4>
+          <div class="drill-fb" id="drill-fb" hidden></div>
+          <div class="drill-btns">
+            <button type="button" class="btn small ghost" id="drill-show">看答案</button>
+            <button type="button" class="btn small ghost" id="drill-retry" hidden>再試一次</button>
+            <button type="button" class="btn small primary" id="drill-next">下一題</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 19. 影片 ===================== -->
+    <section class="chapter" id="videos" data-levels="1 2 3" data-toc="精彩對打觀摩">
+      <div class="chap-head">
+        <div class="eyebrow"><span class="chap-num">20</span> Watch &amp; Learn <span class="tag l1">入門</span><span class="tag l2">進階</span><span class="tag l3">高手</span></div>
+        <h2>國外精彩對打觀摩</h2>
+        <p class="lead">精選職業賽與 open play 的精彩回合。每張卡片只播放標示的精華段落（例如 10:45–13:15），播完會自動停止。影片版權屬於原頻道，這裡只用 YouTube 官方播放器嵌入，不下載、不重製，請到原頻道按讚訂閱支持創作者。</p>
+      </div>
+      <div class="video-filter" role="group" aria-label="影片類別">
+        <button type="button" id="vf-all" data-vf="all" aria-pressed="true">全部</button>
+        <button type="button" id="vf-pro" data-vf="pro" aria-pressed="false">職業賽</button>
+        <button type="button" id="vf-openplay" data-vf="openplay" aria-pressed="false">Open Play / 業餘</button>
+      </div>
+      <p class="video-note" id="video-note" hidden></p>
+      <div class="videos" id="video-list"></div>
+      <p class="lab-foot" style="color:var(--muted)">看影片時建議：先看一次整體，再用 0.5 倍速看球員在對手擊球前的 split step、兩人之間的距離，以及他們什麼時候選擇攻擊。</p>
+    </section>
+
+    <!-- ===================== 20. 斗內 ===================== -->
+    <section class="chapter" id="donate" data-levels="1 2 3" data-toc="斗內支持">
+      <div class="donate">
+        <div class="chap-head">
+          <div class="eyebrow" style="color:rgba(255,255,255,.75)"><span class="chap-num" style="color:var(--ball)">21</span> Support</div>
+          <h2>喜歡這份攻略？請作者喝杯飲料</h2>
+          <p class="lead">這份攻略免費公開。如果它幫你少走了一些彎路，歡迎隨意斗內，支持持續更新更多 3D 戰術和影片解析。</p>
+        </div>
+        <div class="donate-amounts" aria-label="建議金額"><span>一顆球 NT$50</span><span>一杯飲料 NT$100</span><span>一次場地費 NT$300</span><span>一支好拍 隨喜</span></div>
+        <div class="donate-grid" id="donate-grid"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>© 匹克球自創攻略。規則內容以 USA Pickleball 官方規則書為準，本攻略僅供學習參考。</p>
+    <p>3D 真人模型：Microsoft Rocketbox（MIT License，Copyright (c) 2020 Microsoft），來源 <a href="https://github.com/microsoft/Microsoft-Rocketbox" target="_blank" rel="noopener">github.com/microsoft/Microsoft-Rocketbox</a>。影片版權屬於各原頻道。</p>
+  </div>
+</footer>
+
+<script src="js/config.js?v=20260927e"></script>
+<script src="js/videos.js?v=20260927e"></script>
+<script src="js/app.js?v=20260927e"></script>
+<script src="js/court3d.js?v=20260927e"></script>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
+  window.PB3D && window.PB3D.start({ THREE, GLTFLoader, OrbitControls, SkeletonUtils });
+</script>
+<script>
+  /* 3D 函式庫若 8 秒內沒載入（例如離線），顯示提示 */
+  setTimeout(function () {
+    var s = document.getElementById('lab-status');
+    if (s && !window.PB3D_READY) s.textContent = '3D 場景需要網路連線才能載入 three.js。其他章節的 2.5D 圖解不受影響。';
+  }, 8000);
+</script>
